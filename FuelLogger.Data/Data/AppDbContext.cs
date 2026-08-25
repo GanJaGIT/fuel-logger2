@@ -12,13 +12,12 @@ namespace FuelLogger.Data
             _dbPath = dbPath;
         }
 
-        // DbSet'ы для всех сущностей
         public DbSet<Department> Departments { get; set; }
         public DbSet<TemplateVehicle> TemplateVehicles { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<TaskType> TaskTypes { get; set; }
         public DbSet<FleetItem> FleetItems { get; set; }
-        public DbSet<Core.Models.Task> Tasks { get; set; }
+        public DbSet<FuelTask> Tasks { get; set; }
         public DbSet<TaskVehicle> TaskVehicles { get; set; }
         public DbSet<Project> Projects { get; set; }
 
@@ -29,7 +28,6 @@ namespace FuelLogger.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Настройка отношений
             modelBuilder.Entity<Department>()
                 .HasOne(d => d.Parent)
                 .WithMany(d => d.Children)
@@ -48,13 +46,13 @@ namespace FuelLogger.Data
                 .HasForeignKey(f => f.TemplateVehicleId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Task>()
+            modelBuilder.Entity<FuelTask>()
                 .HasOne(t => t.Department)
                 .WithMany(d => d.Tasks)
                 .HasForeignKey(t => t.DepartmentId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Task>()
+            modelBuilder.Entity<FuelTask>()
                 .HasOne(t => t.TaskType)
                 .WithMany(tt => tt.Tasks)
                 .HasForeignKey(t => t.TaskTypeId)
@@ -72,7 +70,6 @@ namespace FuelLogger.Data
                 .HasForeignKey(tv => tv.FleetId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Уникальность названий
             modelBuilder.Entity<TemplateVehicle>()
                 .HasIndex(v => v.Name)
                 .IsUnique();
@@ -85,7 +82,6 @@ namespace FuelLogger.Data
                 .HasIndex(tt => tt.Name)
                 .IsUnique();
 
-            // Ограничения
             modelBuilder.Entity<Department>()
                 .HasCheckConstraint("CK_Department_Level", "Level IN (0, 1)");
 

@@ -1,6 +1,4 @@
-using System;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using FuelLogger.Core.Models;
 
 namespace FuelLogger.Data
@@ -9,7 +7,7 @@ namespace FuelLogger.Data
     {
         public static void Initialize(AppDbContext context)
         {
-            context.Database.Migrate();
+            context.Database.EnsureCreated();
 
             if (!context.Categories.Any())
             {

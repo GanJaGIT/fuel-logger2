@@ -1,0 +1,6 @@
+C:\Users\User\Ganzha_A_A\Projects\fuel-logger2\FuelLogger.Desktop\obj\Debug\net8.0-windows\FuelLogger.Desktop.csproj.AssemblyReference.cache
+C:\Users\User\Ganzha_A_A\Projects\fuel-logger2\FuelLogger.Desktop\obj\Debug\net8.0-windows\Views\MainWindow.g.cs
+C:\Users\User\Ganzha_A_A\Projects\fuel-logger2\FuelLogger.Desktop\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\User\Ganzha_A_A\Projects\fuel-logger2\FuelLogger.Desktop\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Ganzha_A_A\Projects\fuel-logger2\FuelLogger.Desktop\obj\Debug\net8.0-windows\FuelLogger.Desktop_MarkupCompile.cache
+C:\Users\User\Ganzha_A_A\Projects\fuel-logger2\FuelLogger.Desktop\obj\Debug\net8.0-windows\FuelLogger.Desktop_MarkupCompile.lref

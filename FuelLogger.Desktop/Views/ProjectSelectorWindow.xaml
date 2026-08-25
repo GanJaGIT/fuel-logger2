@@ -1,0 +1,34 @@
+﻿<Window x:Class="FuelLogger.Desktop.Views.ProjectSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fuel Logger - Выбор проекта" Height="400" Width="500"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="🚀 Fuel Logger" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="1" Text="Выберите проект для работы" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <ListBox Grid.Row="2" x:Name="RecentProjectsList" 
+                 DisplayMemberPath="Name" 
+                 SelectionChanged="RecentProjectsList_SelectionChanged"
+                 Margin="0,0,0,10"/>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <Button Content="Создать новый проект" Width="150" Click="CreateProject_Click" Margin="0,0,10,0" Padding="5"/>
+            <Button Content="Открыть существующий" Width="150" Click="OpenProject_Click" Padding="5"/>
+        </StackPanel>
+
+        <Button Grid.Row="4" Content="Открыть выбранный" Width="150" x:Name="OpenSelectedButton" 
+                IsEnabled="False" Click="OpenSelectedButton_Click" Padding="5" HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="5" x:Name="StatusTextBlock" Text="Готово" Foreground="Gray" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+    </Grid>
+</Window>

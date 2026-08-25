@@ -11,9 +11,8 @@ namespace FuelLogger.Core.Models
         public double? FuelConsumptionLiters { get; set; }
         public double? FuelConsumptionKg { get; set; }
         public double? FuelConsumptionTanks { get; set; }
-        
-        // Навигационные свойства
-        public Task Task { get; set; }
+
+        public FuelTask Task { get; set; }
         public FleetItem FleetItem { get; set; }
     }
 }

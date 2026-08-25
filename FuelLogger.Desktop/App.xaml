@@ -1,9 +1,9 @@
 ﻿<Application x:Class="FuelLogger.Desktop.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:FuelLogger.Desktop"
-             StartupUri="MainWindow.xaml">
+             xmlns:converters="clr-namespace:FuelLogger.Desktop.Converters"
+             StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+        <converters:LevelToVisibilityConverter x:Key="LevelToVisibilityConverter"/>
     </Application.Resources>
 </Application>

@@ -6,12 +6,10 @@ namespace FuelLogger.Core.Models
         public int DepartmentId { get; set; }
         public int TemplateVehicleId { get; set; }
         public int Quantity { get; set; }
-        
-        // Навигационные свойства
+
         public Department Department { get; set; }
         public TemplateVehicle Vehicle { get; set; }
-        
-        // Вычисляемое поле
+
         public double TotalTankVolume => Quantity * (Vehicle?.TankVolume ?? 0);
     }
 }
