@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="FuelLogger.Core/FuelLogger.Core.csproj" />
+  <Project Path="FuelLogger.Data/FuelLogger.Data.csproj" />
+  <Project Path="FuelLogger.Desktop/FuelLogger.Desktop.csproj" />
+</Solution>
